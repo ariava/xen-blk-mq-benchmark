@@ -13,7 +13,9 @@ correct functioning. Such "stress tests" are also useful to reproduce failures.
 Functionality tests
 -------------------
 
-(placeholder)
+The only available script as of now is the affinity test. It starts a number of fio
+processes with a configurable workload type, and changes their affinity while they
+are issuing I/O.
 
 Performance tests
 -----------------
