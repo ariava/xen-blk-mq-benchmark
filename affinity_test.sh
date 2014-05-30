@@ -5,6 +5,12 @@ IOSIZE=${2-500G}
 WL_TYPE=${3-read}
 FILENAME=${4-/dev/sda}	# WARNING if setting a write workload...
 
+function sync_drop_caches
+{
+	sync
+	echo 3 > /proc/sys/vm/drop_caches
+}
+
 function start_fio
 {
 	FIONAME=$1
@@ -42,6 +48,8 @@ function change_affinity
 
 MAXCPU=$(($(nproc)-1))
 echo $MAXCPU
+
+sync_drop_caches
 
 for i in $(seq 0 $MAXCPU); do
 	# XXX Letting fio overlap while reading/writing
