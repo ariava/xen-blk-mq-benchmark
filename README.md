@@ -38,7 +38,7 @@ Performance tests
 
 The only performance test which is, as of now, available in the suite, is the
 iometer_test.sh script. Such a script can be run as a non-privileged user, and
-will create a large file in the current directory to perform I/O on. Load heaviness
+will create a large file to perform I/O on in the current directory. Load heaviness
 can be specified as command-line parameter in an user-friendly fashion (linear,
 lighter, light, moderate, heavy). The script also allows to specify the size of the
 I/O to be performed. The defaults are the ones in the original IOmeter jobfile
